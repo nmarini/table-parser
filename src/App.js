@@ -8,7 +8,15 @@ function App() {
 
   useEffect(() => {
     fetch(
+      // IRM 
       'https://www.sec.gov/Archives/edgar/data/1020569/000102056920000029/R2.htm'
+      // CONE 
+      // 'https://www.sec.gov//Archives/edgar/data/1553023/000155302320000025/R2.htm'
+      // DLR 
+      // 'https://www.sec.gov/Archives/edgar/data/1297996/000155837020001906/R2.htm'
+      // FREVS 
+      // 'https://www.sec.gov/Archives/edgar/data/36840/000117494720000048/R2.htm'
+
     )
       .then((res) => res.text())
       .then((res) => {
