@@ -15,4 +15,4 @@ You will also see any lint errors in the console.
 ## Usage
 
 A table is displayed the represents the Balance Sheet of IRM (symbol)
-CLick the button at the very bottom of the table to extract the CSV file. 
+CLick the 'Export HTML Table To CSV File' button at the top of the page to extract the CSV file. 

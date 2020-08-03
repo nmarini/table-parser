@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { JsonToTable } from 'react-json-to-table';
-import { parse } from 'himalaya';
 import _ from 'lodash';
-import { CsvToHtmlTable } from 'react-csv-to-table';
 import './App.css';
+import ReactHtmlParser from 'react-html-parser';
 
 function App() {
   const [data, setData] = useState('');
@@ -61,19 +59,14 @@ function App() {
   }
 
   return (
-    <div className='App'>
+    <div 
+    style={{textAlign: 'center', padding: 20}}
+    >
       <h1>HTML Table to CSV</h1>
-      {/* NOTE: This works but the table and subsequently the csv file are formatted poorly   */}
-      {/* When this table is displayed, you need to scroll to the right to see the entire table
-      and same goes for csv file */}
-      <CsvToHtmlTable data={data} csvDelimiter=',' />
-      {/*  */}
-
-    {/* NOTE: not working, possible issue with parse() */}
-    {/* NOTE: passed array in because a previous error said to pass an array into parse()  */}
-      {/* <JsonToTable json={parse([data])} /> */}
-      {/* {console.log(data)} */}
-      <button onClick={() => exportTableToCSV('table.csv')}>Export HTML Table To CSV File</button>
+      <button style={{color: 'red', margin: 15}} onClick={() => exportTableToCSV('table.csv')}>Export HTML Table To CSV File</button>
+      <br />
+      {ReactHtmlParser(data)}
+      {console.log(data)}
     </div>
   );
 }
